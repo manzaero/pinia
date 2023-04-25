@@ -19,6 +19,11 @@
           Delete
         </button>
       </div>
+      <div class="movie_buttons" v-else>
+        <button class="btn btn_green" @click="searchStore.addToMovies(movie)">
+          Add
+        </button>
+      </div>
     </div>
   </div>
 
@@ -26,7 +31,9 @@
 
 <script setup>
 import {useMovieStore} from "../stores/MovieStore.js";
+import {useSearchStore} from "../stores/SearchStore.js";
 
+const searchStore = useSearchStore();
 const movieStore = useMovieStore();
 const props = defineProps({
   movie:{
@@ -37,7 +44,7 @@ const props = defineProps({
   isSearch:{
     type: Boolean,
     required: false,
-    default:() => {}
+    default: false
   }
 })
 </script>

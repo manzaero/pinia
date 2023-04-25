@@ -9,7 +9,10 @@
   <the-loader v-if="searchStore.loader"/>
   <div v-else>
     <the-movies
-        v-for="movie in searchStore.movies" :key="movie.id" :movie="movie"
+        v-for="movie in searchStore.movies"
+        :key="movie.id"
+        :movie="movie"
+        :is-search="true"
     />
   </div>
 </template>
